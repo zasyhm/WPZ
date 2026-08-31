@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Proyek | Jackster Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body
+    class="font-jakarta bg-[#0b0f17] text-slate-100 selection:bg-cyan-500 selection:text-slate-950 bg-mesh-dark relative min-h-screen pb-16 sm:pb-20">
+
+    <!-- FLOATING CAPSULE HEADER NAV -->
+    <header class="sticky top-4 z-50 transition-all duration-300 mb-8 sm:mb-12">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div
+                class="mx-auto flex h-16 items-center justify-between gap-3 rounded-full border border-white/10 bg-slate-900/80 px-4 shadow-[0_18px_44px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all duration-300 lg:max-w-[1040px]">
+
+                <a href="../index.html"
+                    class="group inline-flex items-center gap-2.5 rounded-full text-sm font-semibold tracking-tight text-white focus:outline-none">
+                    <span
+                        class="grid size-9 place-items-center rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-sm font-black text-slate-950 shadow-md shadow-cyan-500/20 transition duration-300 group-hover:scale-105">
+                        J.
+                    </span>
+                    <span class="hidden font-outfit text-lg font-extrabold tracking-tight sm:inline-block">
+                        Jackster<span class="text-cyan-400">.</span>
+                    </span>
+                </a>
+
+                <div class="flex items-center gap-3">
+                    <a href="../index.html"
+                        class="btn-interactive inline-flex items-center gap-2 bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700/80 px-4 py-2 rounded-full font-semibold text-xs transition-all shadow-md">
+                        <i class="fa-solid fa-arrow-left text-cyan-400"></i>
+                        <span data-i18n="backHome">Kembali ke Beranda</span>
+                    </a>
+
+                    <button type="button" onclick="toggleLanguage()"
+                        class="btn-interactive flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-slate-800/90 px-3 py-1.5 text-xs font-bold text-slate-200 shadow-sm transition-all duration-300 hover:border-cyan-400/60 hover:bg-slate-800 hover:shadow-cyan-500/10 active:scale-95 group"
+                        aria-label="Switch Language" title="Switch Language (ID / EN)">
+                        <i
+                            class="fa-solid fa-globe text-cyan-400 text-xs group-hover:text-cyan-300 transition-colors"></i>
+                        <span class="lang-text uppercase tracking-wider text-[11px] text-white font-black">ID</span>
+                        <span
+                            class="text-[9px] bg-cyan-500/15 text-cyan-300 px-1.5 py-0.5 rounded-full border border-cyan-500/30 font-mono hidden sm:inline-block">ID
+                            / EN</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HEADER BANNER -->
+    <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+        <div class="card-elevated relative overflow-hidden py-12 sm:py-16 px-6 text-center">
+            <div class="pointer-events-none absolute left-[-4rem] top-0 size-72 rounded-full bg-blue-600/15 blur-[90px]"
+                aria-hidden="true"></div>
+            <div class="pointer-events-none absolute right-[-4rem] bottom-0 size-80 rounded-full bg-cyan-500/15 blur-[100px]"
+                aria-hidden="true"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <span
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-4">
+                    <i class="fa-solid fa-layer-group text-xs"></i> Portfolio Gallery
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-outfit font-black tracking-tight text-white mb-3"
+                    data-i18n="galleryHeaderTitle">
+                    Galeri Kumpulan Proyek
+                </h1>
+                <p class="text-sm sm:text-base md:text-lg text-slate-400 font-medium max-w-xl mx-auto text-center px-4"
+                    data-i18n="galleryHeaderSub">
+                    Proyek-proyek penguasaan software dan proyek client
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6 CATEGORIES FILTER PILL BUTTONS -->
+    <div
+        class="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3 mb-10 sm:mb-14 max-w-5xl mx-auto px-4 sm:px-6">
+        <!-- VIDEO -->
+        <button data-filter="video"
+            class="filter-btn btn-interactive btn-pill bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-4 py-2.5 sm:px-5 sm:py-3 text-xs font-bold transition-all border border-slate-700/80 hover:border-cyan-500/50 shadow-md flex items-center gap-2"
+            title="Video" aria-label="Video">
+            <i class="fa-solid fa-film text-red-400 text-sm"></i>
+            <span data-i18n="filterVideo">Video</span>
+        </button>
+
+        <!-- FOTO -->
+        <button data-filter="foto"
+            class="filter-btn btn-interactive btn-pill bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-4 py-2.5 sm:px-5 sm:py-3 text-xs font-bold transition-all border border-slate-700/80 hover:border-cyan-500/50 shadow-md flex items-center gap-2"
+            title="Foto" aria-label="Foto">
+            <i class="fa-solid fa-camera text-emerald-400 text-sm"></i>
+            <span data-i18n="filterFoto">Foto</span>
+        </button>
+
+        <!-- DESIGN -->
+        <button data-filter="design"
+            class="filter-btn btn-interactive btn-pill bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-4 py-2.5 sm:px-5 sm:py-3 text-xs font-bold transition-all border border-slate-700/80 hover:border-cyan-500/50 shadow-md flex items-center gap-2"
+            title="Desain" aria-label="Desain">
+            <i class="fa-solid fa-palette text-amber-400 text-sm"></i>
+            <span data-i18n="filterDesign">Desain</span>
+        </button>
+
+        <!-- WEBSITE -->
+        <button data-filter="website"
+            class="filter-btn btn-interactive btn-pill bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-4 py-2.5 sm:px-5 sm:py-3 text-xs font-bold transition-all border border-slate-700/80 hover:border-cyan-500/50 shadow-md flex items-center gap-2"
+            title="Website" aria-label="Website">
+            <i class="fa-solid fa-laptop-code text-cyan-400 text-sm"></i>
+            <span data-i18n="filterWebsite">Website</span>
+        </button>
+
+        <!-- MUSIK -->
+        <button data-filter="musik"
+            class="filter-btn btn-interactive btn-pill bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-4 py-2.5 sm:px-5 sm:py-3 text-xs font-bold transition-all border border-slate-700/80 hover:border-cyan-500/50 shadow-md flex items-center gap-2"
+            title="Musik" aria-label="Musik">
+            <i class="fa-solid fa-music text-purple-400 text-sm"></i>
+            <span data-i18n="filterMusik">Musik</span>
+        </button>
+
+        <!-- SERTIFIKAT -->
+        <button data-filter="sertifikat"
+            class="filter-btn btn-interactive btn-pill bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-4 py-2.5 sm:px-5 sm:py-3 text-xs font-bold transition-all border border-slate-700/80 hover:border-cyan-500/50 shadow-md flex items-center gap-2"
+            title="Sertifikat" aria-label="Sertifikat">
+            <i class="fa-solid fa-award text-yellow-400 text-sm"></i>
+            <span data-i18n="filterSertifikat">Sertifikat</span>
+        </button>
+
+        <!-- SEMUA (FAR RIGHT END) -->
+        <button data-filter="all"
+            class="filter-btn btn-interactive btn-pill bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold px-5 py-2.5 sm:px-6 sm:py-3 text-xs transition-all shadow-lg shadow-blue-500/25 scale-105 flex items-center gap-2"
+            title="Semua">
+            <i class="fa-solid fa-layer-group text-xs sm:text-sm"></i>
+            <span data-i18n="filterAll">Semua</span>
+        </button>
+    </div>
+
+    <!-- GALLERY GRID CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-8 md:px-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- ===================== VIDEO KARYA ===================== -->
+            <!-- Video 1: Genta Jaya Clothes Shop -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="video" onclick="openProjectDetail({
+                    category:'video',
+                    title:'Videografi • Genta Jaya Clothes Shop',
+                    subtitle:'Projek Komersil Toko Busana · 2022',
+                    desc:'Projek ini dibuat untuk mere-branding salah satu toko busana yang dimiliki oleh temen saya, dibuat kesan cinematic agar terlihat nilai daya tarik kepada yang melihatnya, dan menjadi hook agar toko busana ini bisa memasuki di ranah digital marketing.',
+                    role:'Videografer dan Editor',
+                    year:'2022',
+                    deliverable:'Mempromosikan Toko Busana',
+                    tags:['Videografi', 'Editor', 'Cinematic', 'Re-Branding'],
+                    video:'../assets/video/Project Clothes Shop Genta Cinematic Brand.mp4'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover" preload="metadata">
+                        <source src="../assets/video/Project Clothes Shop Genta Cinematic Brand.mp4" type="video/mp4">
+                    </video>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-red-300 bg-red-500/20 px-2.5 py-0.5 rounded-full border border-red-500/30">🎬
+                                Video</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2022</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Genta Jaya Clothes Shop</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Videografer dan Editor</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Video 2: TRIASTARA PROJEK -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="video" onclick="openProjectDetail({
+                    category:'video',
+                    title:'Sutradara • TRIASTARA PROJEK',
+                    subtitle:'Dokumenter Angkatan Sekolah · 2023',
+                    desc:'Projek ini atas dasar gebrakan dari inisiatif saya sendiri untuk membuat video angkatan yang berkesan, dibungkus dengan perpaduan unsur dramatis cerita masa-masa sekolah dengan sentuhan cinematic yang bisa mengangkat cerita.',
+                    role:'Sutradara, Videografer, Editor',
+                    year:'2023',
+                    deliverable:'Video dokumenter angkatan sekolah',
+                    tags:['Sutradara', 'Videografer', 'Editor', 'Dokumenter Sekolah'],
+                    video:'../assets/video/triastaraSchool.mp4'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover" preload="metadata">
+                        <source src="../assets/video/triastaraSchool.mp4" type="video/mp4">
+                    </video>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-red-300 bg-red-500/20 px-2.5 py-0.5 rounded-full border border-red-500/30">🎬
+                                Video</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            TRIASTARA PROJEK</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Sutradara, Videografer, Editor
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Video 3: Alun-alun Rangkasbitung -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="video" onclick="openProjectDetail({
+                    category:'video',
+                    title:'Sinematik • Alun-alun Rangkasbitung',
+                    subtitle:'Dokumentasi Suasana Sore · 2021',
+                    desc:'Projek ini hanya sekedar mengisi kekosongan waktu luang ketika sore hari menikmati sejuknya angin sore sambil mendokumentasikan sudut-sudut alun-alun rangkasbitung.',
+                    role:'Sutradara, Videografer, Editor',
+                    year:'2021',
+                    deliverable:'Video Sinematik',
+                    tags:['Videografi', 'Editor', 'Cinematic', 'Dokumentasi'],
+                    video:'../assets/video/Cinematic Alun-Alun 2021.mp4'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover" preload="metadata">
+                        <source src="../assets/video/Cinematic Alun-Alun 2021.mp4" type="video/mp4">
+                    </video>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-red-300 bg-red-500/20 px-2.5 py-0.5 rounded-full border border-red-500/30">🎬
+                                Video</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2021</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Alun-alun Rangkasbitung</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Sutradara, Videografer, Editor
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Video 4: Sekolah MAN -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="video" onclick="openProjectDetail({
+                    category:'video',
+                    title:'Sinematik • Sekolah MAN',
+                    subtitle:'Dokumentasi Jam Pelajaran · 2022',
+                    desc:'Dari kekosongan jam kosong ketika diwaktu pelajaran, menginisiatifkan membuat video sinematik sekilas tentang suasana sekolah disaat jam pelajaran.',
+                    role:'Videografer, Editor',
+                    year:'2022',
+                    deliverable:'Video Sinematik',
+                    tags:['Videografer', 'Editor', 'Cinematic', 'Sekolah'],
+                    video:'../assets/video/Cinematic School 2021.mp4'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover" preload="metadata">
+                        <source src="../assets/video/Cinematic School 2021.mp4" type="video/mp4">
+                    </video>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-red-300 bg-red-500/20 px-2.5 py-0.5 rounded-full border border-red-500/30">🎬
+                                Video</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2022</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Sekolah MAN</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Videografer, Editor</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Video 5: Pantai Binuangen -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="video" onclick="openProjectDetail({
+                    category:'video',
+                    title:'Sinematik • Pantai Binuangen',
+                    subtitle:'Dokumentasi Acara Saba Dulur · 2025',
+                    desc:'Disaat acara liburan organisasi primordial &quot;Saba Dulur&quot;, saya mengambil beberapa momen kebersamaan dan pemandangan laut yang indah.',
+                    role:'Videografer, Editor',
+                    year:'2025',
+                    deliverable:'Video Sinematik',
+                    tags:['Videografer', 'Editor', 'Cinematic', 'Wisata Pantai'],
+                    video:'../assets/video/binuangen.mp4'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover" preload="metadata">
+                        <source src="../assets/video/binuangen.mp4" type="video/mp4">
+                    </video>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-red-300 bg-red-500/20 px-2.5 py-0.5 rounded-full border border-red-500/30">🎬
+                                Video</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2025</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Pantai Binuangen</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Videografer, Editor</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- ===================== FOTO KARYA ===================== -->
+            <!-- Foto 1: Golden Rasio • Gunung Gede -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Golden Rasio • Gunung Gede',
+                    subtitle:'Fotografi & Color grading · 2023',
+                    desc:'dikala saya menaiki gunung secara perdana saya memotret suasana Alun-alun Surya Kencana yang ada di Gunung Gede Pangrango Cianjur Jawa barat dengan pembagian bidang horizontal yang seimbang. Foto ini menonjolkan hamparan padang edelweis di latar depan dan garis pegunungan yang tegas berpadu hangatnya sinar matahari pagi.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Foto Pegunungan',
+                    tags:['Fotografi', 'Color Grading', 'Landscape', 'Gunung Gede'],
+                    thumb:'../assets/img/gunungGedeFotograf.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/gunungGedeFotograf.jpg" alt="Golden Rasio Gunung Gede"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Golden Rasio • Gunung Gede</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 2: Potret puncak • Gunung Gede (1) -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Potret puncak • Gunung Gede',
+                    subtitle:'Fotografi Landscape & Tone Color · 2023',
+                    desc:'tangkapan momen di puncak Gunung Gede dengan tekstur batuan cadas yang tajam serta pencahayaan alami di batas cakrawala pegunungan.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Foto Pegunungan',
+                    tags:['Fotografi', 'Color Grading', 'Landscape', 'Puncak Gunung'],
+                    thumb:'../assets/img/benderaGGede.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/benderaGGede.jpg" alt="Potret Puncak Gunung Gede"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Potret puncak • Gunung Gede</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 3: Potret Luhur • Gunung Gede (2) -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Potret puncak • Gunung Gede',
+                    subtitle:'Fotografi Landscape & Tone Color · 2023',
+                    desc:'Perspektif pandang luas dari ketinggian puncak Gunung Gede Pangrango yang menangkap lautan awan putih di bawah garis cakrawala dengan gradasi warna alam yang alami.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Foto Pegunungan',
+                    tags:['Fotografi', 'Color Grading', 'Landscape', 'Puncak Gunung'],
+                    thumb:'../assets/img/luhurGGede.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/luhurGGede.jpg" alt="Luhur Gunung Gede"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Potret puncak • Gunung Gede</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 4: Art Interior • Masjid Al-Jabbar -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Art Interior • Masjid Al-Jabbar',
+                    subtitle:'Fotografi Arsitektur Interior · 2023',
+                    desc:'kemegahan ini saya begitu takjub akan ornamen dari arsitek interior di Masjid Al-Jabbar Bandung dengan sudut pengambilan simetris dari bawah ke atas. Foto ini menampilkan kemewahan susunan pilar geometris dan pendaran lampu keemasan di dalam aula utama.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Kemegahan dalam Masjid',
+                    tags:['Fotografi', 'Color Grading', 'Architecture', 'Interior'],
+                    thumb:'../assets/img/dalemAl-jabar.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/dalemAl-jabar.jpg" alt="Art Interior Masjid Al-Jabbar"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Art Interior • Masjid Al-Jabbar</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 5: Art Ornamen • Masjid Al-Jabbar -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Art Ornamen • Masjid Al-Jabbar',
+                    subtitle:'Fotografi Detail Ornamen · 2023',
+                    desc:'Kepresisian Ornamen dari atap Masjid Al-Jabbar dengan sudut pandang tegak lurus yang memperlihatkan kerapatan pola ukiran langit-langit serta perpaduan warna yang tenang.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Kepresisian luar Masjid',
+                    tags:['Fotografi', 'Color Grading', 'Ornamen', 'Detail'],
+                    thumb:'../assets/img/atapAl-jabar.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/atapAl-jabar.jpg" alt="Art Ornamen Atap Masjid Al-Jabbar"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Art Ornamen • Masjid Al-Jabbar</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 6: Art Bangunan • Masjid Al-Jabbar -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Art Bangunan • Masjid Al-Jabbar',
+                    subtitle:'Fotografi Eksterior & Refleksi Air · 2023',
+                    desc:'Keunikan dari tampak luar depan Masjid Al-Jabbar, dan tidak bisa dipungkiri juga jumlah-jumlah bangunan dibangun di Masjid Al-Jabar memiliki filosofi tersendiri dari sebuah Mahakarya Arsiteknya dengan memanfaatkan pantulan air kolam di depan bangunan untuk menciptakan cermin refleksial yang megah.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Kepresisian luar Masjid',
+                    tags:['Fotografi', 'Color Grading', 'Architecture', 'Eksterior'],
+                    thumb:'../assets/img/depanAl-jabar.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/depanAl-jabar.jpg" alt="Art Bangunan Masjid Al-Jabbar"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Art Bangunan • Masjid Al-Jabbar</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 7: Potret suasana jalanan • Jalan Braga -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Potret suasana jalanan • Jalan Braga',
+                    subtitle:'Street Photography · 2023',
+                    desc:'di sore hari ketika sedang menikmati jalan-jalan sore, saya tak sengaja memotret jalanan braga disekitar dengan bayangan lembut sinar matahari senja yang jatuh di atas deretan bangunan bergaya kolonial.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Suasana ramai Jalanan Braga',
+                    tags:['Street Photography', 'Color Grading', 'Jalan Braga', 'Bandung'],
+                    thumb:'../assets/img/jlnbraga.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/jlnbraga.jpg" alt="Jalan Braga Bandung"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Potret suasana jalanan • Jalan Braga</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 8: Potret Rel Stasiun Bandung (1) -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Pemandangan Rel Stasiun • Bandung',
+                    subtitle:'Perspective & Urban Photography · 2023',
+                    desc:'ketika sedang jalan-jalan menikmati angin sore hari, tak sengaja saya memotret pemandangan lengkungan rel kereta dengan garis-garis baja sejajar yang mengarahkan pandangan langsung menuju cakrawala kota Bandung.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Pemandangan',
+                    tags:['Fotografi', 'Perspective', 'Stasiun Bandung', 'Urban'],
+                    thumb:'../assets/img/relBandung.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/relBandung.jpg" alt="Rel Stasiun Bandung"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Pemandangan Rel Stasiun • Bandung</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 9: Potret lampu rel Stasiun Bandung (2) -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Potret Lampu di Stasiun Bandung • Bandung',
+                    subtitle:'Perspective & Mood Photography · 2023',
+                    desc:'di potret ini saya sedang menunggu jam keberangkatan kereta sambil memoto spot yang menarik di sekitaran Stasiun Bandung dengan pencahayaan lampu peron di kala temaram sore.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Pemandangan',
+                    tags:['Fotografi', 'Color Grading', 'Stasiun Bandung', 'Mood'],
+                    thumb:'../assets/img/lampuKeretaFotograf.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/lampuKeretaFotograf.jpg" alt="Lampu Kereta Malam Stasiun Bandung"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Potret Lampu di Stasiun Bandung • Bandung</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 10: Sinematik foto • Lebak -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Sinematik foto • Lebak',
+                    subtitle:'Vintage Photography & Mood · 2023',
+                    desc:'sebetulnya lokasi ini bertepatan di depan rumah, karena rumah ini adalah rumah kosong peninggalan orang tionghoa dengan nuansa warna klasik yang menonjolkan tekstur kayu tua dan suasana tenang di sekelilingnya.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Pemandangan',
+                    tags:['Fotografi', 'Color Grading', 'Vintage', 'Sinematik'],
+                    thumb:'../assets/img/lebak.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/lebak.jpg" alt="Sinematik foto Lebak"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Sinematik foto • Lebak</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 11: Reptile Bunglon • Belakang Rumah -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Reptile Bunglon • Belakang Rumah',
+                    subtitle:'Nature & Wildlife Macro Photography · 2023',
+                    desc:'ketika sedang melihat belakang rumah tak sengaja melihat seekor bunglon yang sedang merayap di pohonya dengan pose menarik untuk difoto dengan rincian tekstur kulit dan warna alaminya yang membaur dengan ranting.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Pemandangan',
+                    tags:['Fotografi', 'Macro', 'Wildlife', 'Nature'],
+                    thumb:'../assets/img/bunglon.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/bunglon.jpg" alt="Reptile Bunglon Belakang Rumah"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Reptile Bunglon • Belakang Rumah</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Foto 12: Wisata Bukit Waruwangi • Serang -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="foto" onclick="openProjectDetail({
+                    category:'foto',
+                    title:'Pemandangan • Waruwangi Serang',
+                    subtitle:'Landscape & Nature Photography · 2023',
+                    desc:'menikmati liburan di Wisata Bukit Waruwangi Serang dengan suasana asri pegunungan dan rerumputan sambil ditemani oleh para kelompok domba peternak, dengan tangkapan warna hijau padang rumput yang terbuka segar.',
+                    role:'Fotografi, Color grading',
+                    year:'2023',
+                    deliverable:'Pemandangan',
+                    tags:['Fotografi', 'Color Grading', 'Landscape', 'Bukit Waruwangi'],
+                    thumb:'../assets/img/dombaSawah.jpg'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/dombaSawah.jpg" alt="Wisata Bukit Waruwangi"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">📷
+                                Foto</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2023</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Pemandangan Bukit Waruwangi • Serang</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Fotografi &amp; Color grading
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- ===================== DESIGN KARYA ===================== -->
+            <!-- ===================== DESIGN KARYA ===================== -->
+            <!-- Design 1: SHIIN.THRIFT -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Design Logo',
+                    title:'Logo SHIIN.THRIFT',
+                    subtitle:'Logo Design & Branding Identity · 2024',
+                    desc:'Desain identitas logo untuk brand thrift fashion SHIIN.THRIFT. Konsep visualnya memadukan elemen tipografi modern yang simpel dengan bentukan gantungan baju (hanger) unik yang tersembunyi pada karakter hurufnya. Logo ini dirancang untuk menampilkan kesan toko pakaian thrift yang kasual, kekinian, namun tetap rapi dan relevan bagi tren anak muda.',
+                    role:'Designer Logo',
+                    year:'2024',
+                    deliverable:'Personal branding Logo Organisasi',
+                    tags:['Figma', 'Vector Art', 'Branding Identity', 'Logo Design'],
+                    gallery:[
+                        { src:'../assets/img/logoShintrif.jpg', label:'Slide 1: Logo Utama', icon:'fa-shirt' }
+                    ],
+                    instagram:'https://www.instagram.com/reel/DJ8qIWkvnvM/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/reel/DJ8qIWkvnvM/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-amber-300 bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30">Logo</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            SHIIN.THRIFT
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Thrift Brand &amp; Hanger Logo
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-slate-400 font-medium">Figma Vector</span>
+                </div>
+            </div>
+
+            <!-- Design 2: Kabinet ADHIKARYA -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Design Logo',
+                    title:'Logo Kabinet ADHIKARYA',
+                    subtitle:'Kabinet ADHIKARYA 2024 · HMPS IAT UIN SMH Banten',
+                    desc:'Identitas Organisasi Himpunan Program Studi Ilmu Al-Qur\'an Tafsir UIN SMH Banten. Nama ADHIKARYA merupakan identitas visual resmi Himpunan Mahasiswa Program Studi (HMPS) Ilmu Al-Qur\'an dan Tafsir UIN Sultan Maulana Hasanuddin Banten. Nama &quot;ADHIKARYA&quot; diserap dari bahasa Sanskerta dan khazanah keislaman (Adhi: Utama, Unggul, Mulia; Karya: Hasil ciptaan &amp; kontribusi positif). Nama tersebut diambil berdasar dari semangat organisasi dalam melahirkan karya keilmuan Al-Qur\'an yang unggul dan berintegritas tinggi.',
+                    role:'Designer Logo',
+                    year:'2024',
+                    deliverable:'Personal branding Logo Organisasi',
+                    tags:['Figma', 'Vector Art', 'Branding Identity', 'Calligraphy Art', 'Logo Design', 'Social Media Kit'],
+                    gallery:[
+                        { src:'../assets/img/LogoAdhikarya.jpg', label:'Slide 1: Logo Utama', icon:'fa-kaaba' },
+                        { src:'../assets/img/LogoAdhikarya2.jpg', label:'Slide 2: Foto Feed IG', icon:'fa-instagram' }
+                    ],
+                    instagram:'https://www.instagram.com/p/DHJqB82z0LT/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DHJqB82z0LT/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-amber-300 bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30">Logo</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Kabinet ADHIKARYA
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">HMPS IAT UIN SMH Banten</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-slate-400 font-medium">Figma Vector</span>
+                </div>
+            </div>
+
+            <!-- Design 3: KOMINFO -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Feeds Instagram KOMINFO',
+                    subtitle:'Layout Informatif & Feeds IG · 2024',
+                    desc:'Desain konten visual Feeds Instagram untuk KOMINFO dengan tata letak informasi yang bersih, modern, dan komunikatif. Dirancang untuk menyampaikan pesan edukasi serta publikasi resmi secara visual menarik dan profesional.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Feeds Instagram Publikasi KOMINFO',
+                    tags:['Canva', 'Instagram Feed', 'Content Design', 'Kominfo', 'Social Media'],
+                    instagram:'https://www.instagram.com/p/DPT03_6j3Y-/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DPT03_6j3Y-/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            KOMINFO
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Layout Informatif &amp; Feeds
+                            IG</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 4: Poster Kajian Menyelami Makna Kedamaian Hati -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Poster Kajian Menyelami Makna Kedamaian Hati dalam Cinta Ilahi',
+                    subtitle:'Poster Instagram & Visual Dakwah · 2024',
+                    desc:'Desain poster instagram kajian islami bertema &quot;Menyelami Makna Kedamaian Hati dalam Cinta Ilahi&quot;. Mengusung estetika visual yang menenangkan dengan paduan tipografi islami modern, nuansa warna hangat, dan komposisi visual yang harmonis.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Poster Instagram Visual Dakwah',
+                    tags:['Canva', 'Poster Design', 'Instagram Feed', 'Kajian Poster', 'Visual Dakwah'],
+                    instagram:'https://www.instagram.com/p/DKWSPW6P9zc/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DKWSPW6P9zc/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Kajian Kedamaian Hati Dalam Cinta Ilahi
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Poster Instagram &amp; Visual
+                            Dakwah</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 5: Hari Raya Waisak -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Poster Hari Raya Waisak (Sejarah)',
+                    subtitle:'Poster Edukatif & Feeds Instagram · 2024',
+                    desc:'Desain poster edukasi memperingati Hari Raya Waisak dan sejarah peringatannya. Mengombinasikan ilustrasi tematik, harmoni warna spiritual, serta susunan informasi sejarah yang rapi dan menarik untuk media sosial.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Poster Hari Raya & Infografis IG',
+                    tags:['Canva', 'Poster Design', 'Instagram Feed', 'Historical Poster', 'Infografis'],
+                    instagram:'https://www.instagram.com/p/DKE8qJUPH-8/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DKE8qJUPH-8/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Hari Raya Waisak (Sejarah)
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Poster Edukatif &amp;
+                            Infografis IG</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 6: Kajian Self Development -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Poster Kajian Self Development',
+                    subtitle:'Poster Instagram & Interactive Feed · 2024',
+                    desc:'Desain poster instagram kajian pengembangan diri (Self Development). Dibuat dengan gaya visual kekinian yang inspiratif, tipografi yang tegas, dan tata letak yang ramah dibaca untuk audiens generasi muda.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Poster Carousel IG & Visual Content',
+                    tags:['Canva', 'Poster Design', 'Instagram Feed', 'Self Development', 'Graphic Design'],
+                    instagram:'https://www.instagram.com/p/DK3rMuUPpUH/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DK3rMuUPpUH/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Kajian Self Development
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Poster Instagram &amp;
+                            Interactive Feed</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 7: Dokumentasi Rapat Koordinasi Kesehatan Jemaah Haji -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Dokumentasi Rapat Koordinasi Kesehatan Jemaah Haji',
+                    subtitle:'Dokumentasi Kegiatan & Feeds IG · 2024',
+                    desc:'Desain poster dokumentasi kegiatan Rapat Koordinasi Kesehatan Jemaah Haji dengan susunan visual informatif, modern, dan komunikatif.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Feeds Instagram Dokumentasi Kegiatan',
+                    tags:['Canva', 'Instagram Feed', 'Poster Design', 'Dokumentasi Haji', 'Kemenag'],
+                    instagram:'https://www.instagram.com/p/DciHsmVmOTW/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DciHsmVmOTW/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Rapat Koordinasi Kesehatan Jemaah Haji
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Dokumentasi Kegiatan &amp;
+                            Feeds IG</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 8: Sosialisasi & Verifikasi Data Calon Jemaah -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Dokumentasi Sosialisasi & Verifikasi Data Calon Jemaah',
+                    subtitle:'Sosialisasi & Verifikasi Data · 2024',
+                    desc:'Desain konten visual dokumentasi kegiatan sosialisasi dan verifikasi data calon jemaah haji dengan tata letak informasi rapi dan komunikatif.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Feeds Instagram Media Publikasi',
+                    tags:['Canva', 'Instagram Feed', 'Poster Design', 'Sosialisasi Data'],
+                    instagram:'https://www.instagram.com/p/DbI1gBcmADi/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DbI1gBcmADi/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Sosialisasi &amp; Verifikasi Data Calon Jemaah
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Sosialisasi &amp; Verifikasi
+                            Data</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 9: Sosialisasi & Verifikasi Data Calon Jemaah Cadangan -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Dokumentasi Sosialisasi & Verifikasi Calon Jemaah Cadangan',
+                    subtitle:'Sosialisasi Jemaah Cadangan · 2024',
+                    desc:'Desain poster dokumentasi publikasi kegiatan sosialisasi serta verifikasi data calon jemaah cadangan haji secara informatif dan profesional.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Feeds Instagram Dokumentasi Kegiatan',
+                    tags:['Canva', 'Instagram Feed', 'Poster Design', 'Jemaah Cadangan'],
+                    instagram:'https://www.instagram.com/p/DbCwVyyGIpm/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DbCwVyyGIpm/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Sosialisasi Calon Jemaah Cadangan
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Sosialisasi &amp; Verifikasi
+                            Jemaah Cadangan</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 10: Persyaratan Pelimpahan Porsi -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Persyaratan Pelimpahan Porsi Haji',
+                    subtitle:'Panduan & Prosedur Pelimpahan Porsi · 2024',
+                    desc:'Desain poster infografis syarat dan tata cara pelimpahan porsi pendaftaran haji dengan visualisasi alur yang ringkas dan jelas.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Poster Infografis Feeds Instagram',
+                    tags:['Canva', 'Infografis', 'Pelimpahan Porsi', 'Edukasi Haji'],
+                    instagram:'https://www.instagram.com/p/DamXHxkuuoF/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DamXHxkuuoF/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Persyaratan Pelimpahan Porsi
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Panduan &amp; Infografis
+                            Pelimpahan Porsi</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 11: Syarat Pembatalan Haji -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Syarat Pembatalan Haji',
+                    subtitle:'Panduan & Infografis Pembatalan Porsi · 2024',
+                    desc:'Desain poster informatif mengenai persyaratan dan alur administratif pembatalan haji secara transparan, akurat, dan komunikatif.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Poster Infografis Feeds Instagram',
+                    tags:['Canva', 'Infografis', 'Pembatalan Haji', 'Syarat & Ketentuan'],
+                    instagram:'https://www.instagram.com/p/DamYclku8UI/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DamYclku8UI/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Syarat Pembatalan Haji
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Panduan &amp; Infografis
+                            Pembatalan Porsi</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 12: Edukasi Haji (Serial 3 Slide) -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Edukasi Haji',
+                    subtitle:'Serial Edukasi & Manasik Haji · 2024',
+                    desc:'Serial poster edukasi haji yang berisi wawasan, panduan, dan materi edukatif seputar pelaksanaan ibadah haji yang dikemas secara visual menarik dan inspiratif.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Serial Poster Infografis Feeds Instagram (3 Slide)',
+                    tags:['Canva', 'Edukasi Haji', 'Serial Infografis', 'Visual Content', 'Instagram Feed'],
+                    gallery:[
+                        { src:'embed', embedUrl:'https://www.instagram.com/p/Dbuac6RmIIO/embed', label:'Slide 1: Part 1', icon:'fa-instagram' },
+                        { src:'embed', embedUrl:'https://www.instagram.com/p/DbuZ76rGDuv/embed', label:'Slide 2: Part 2', icon:'fa-instagram' },
+                        { src:'embed', embedUrl:'https://www.instagram.com/p/DbuZFtNGJCg/embed', label:'Slide 3: Part 3', icon:'fa-instagram' }
+                    ],
+                    instagram:'https://www.instagram.com/p/Dbuac6RmIIO/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/Dbuac6RmIIO/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Edukasi Haji
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Serial Edukasi &amp;
+                            Infografis Haji</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- Design 13: Syarat Pendaftaran Haji -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="design" onclick="openProjectDetail({
+                    category:'design',
+                    modalCategoryTag:'Feeds Instagram',
+                    title:'Syarat Pendaftaran Haji',
+                    subtitle:'Panduan & Prosedur Pendaftaran Haji · 2024',
+                    desc:'Desain poster panduan pendaftaran haji yang memuat poin-poin persyaratan administrasi, dokumen penting, dan alur pendaftaran awal secara sistematis.',
+                    role:'Designer Poster',
+                    year:'2024',
+                    deliverable:'Poster Infografis Feeds Instagram',
+                    tags:['Canva', 'Pendaftaran Haji', 'Infografis', 'Persyaratan Haji'],
+                    instagram:'https://www.instagram.com/p/DamB8_LuUcA/'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <iframe src="https://www.instagram.com/p/DamB8_LuUcA/embed"
+                        class="w-full h-full border-0 bg-slate-950 pointer-events-none" loading="lazy"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-pink-300 bg-pink-500/20 px-2.5 py-0.5 rounded-full border border-pink-500/30"><i
+                                    class="fa-brands fa-instagram"></i> Feeds Instagram</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2024</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            Syarat Pendaftaran Haji
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Infografis Syarat &amp;
+                            Prosedur Pendaftaran</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Info detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-pink-400 font-medium">Canva</span>
+                </div>
+            </div>
+
+            <!-- ===================== SERTIFIKAT KARYA ===================== -->
+            <!-- Cert 1: Juara 3 Bazar Ramadhan Badak Banten -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="sertifikat" onclick="openProjectDetail({
+                    category:'sertifikat',
+                    modalCategoryTag:'Sertifikat Kejuaraan',
+                    title:'Juara 3 Bazar Ramadhan Anniversary Badak Banten',
+                    subtitle:'Penyelenggara: Badak Banten',
+                    desc:'Sertifikat ini diraih dari acara yang diselenggarakan oleh Badak Banten dalam acara Bazar Ramadhan Anniversary Badak Banten dan meraih juara 3 dalam acara itu.',
+                    role:'Juara 3',
+                    year:'Penghargaan',
+                    deliverable:'Sertifikat Resmi Kejuaraan',
+                    tags:['Juara 3', 'Bazar Ramadhan', 'Badak Banten', 'Kejuaraan'],
+                    thumb:'../assets/img/SertifikatJuara3BazarRamadhan.jpg'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <img src="../assets/img/SertifikatJuara3BazarRamadhan.jpg" alt="Sertifikat Juara 3 Bazar Ramadhan"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-amber-300 bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30">🏆
+                                Juara 3</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">Badak
+                                Banten</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-amber-300 transition-colors line-clamp-1">
+                            Juara 3 Bazar Ramadhan
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Anniversary Badak Banten</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-amber-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Lihat Sertifikat <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-slate-400 font-medium">Kejuaraan</span>
+                </div>
+            </div>
+
+            <!-- Cert 2: Juara 2 ATRAKSI UKM FAMS -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="sertifikat" onclick="openProjectDetail({
+                    category:'sertifikat',
+                    modalCategoryTag:'Sertifikat Kejuaraan',
+                    title:'Juara 2 ATRAKSI (Ajang Tracking Kreatifitas Seni)',
+                    subtitle:'Penyelenggara: UKM FAMS · Universitas Latansa Mashiro',
+                    desc:'Sertifikat ini diraih dari acara ajang tracking kreatifitas seni atau yang disingkat dengan &quot;ATRAKSI&quot;. Acara ini diselenggarakan oleh UKM FAMS, salah satu Unit Kegiatan Mahasiswa Seni dari Universitas Latansa Mashiro dan dari acara ini alhamdulilah meraih juara dua dalam festival tersebut.',
+                    role:'Juara 2',
+                    year:'Penghargaan',
+                    deliverable:'Sertifikat Kejuaraan Seni',
+                    tags:['Juara 2', 'ATRAKSI', 'UKM FAMS', 'Universitas Latansa Mashiro'],
+                    thumb:'../assets/img/SertifikatJuara2UKMFAMS.jpg'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <img src="../assets/img/SertifikatJuara2UKMFAMS.jpg" alt="Sertifikat Juara 2 UKM FAMS"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">🥈
+                                Juara 2</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">UKM
+                                FAMS</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-emerald-300 transition-colors line-clamp-1">
+                            Juara 2 Festival ATRAKSI
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Univ. Latansa Mashiro</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-emerald-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Lihat Sertifikat <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-slate-400 font-medium">Festival Seni</span>
+                </div>
+            </div>
+
+            <!-- Cert 3: Sertifikat Kelulusan PBAK UIN SMH Banten -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="sertifikat" onclick="openProjectDetail({
+                    category:'sertifikat',
+                    modalCategoryTag:'Sertifikat Akademik',
+                    title:'Sertifikat Kelulusan PBAK UIN SMH Banten',
+                    subtitle:'Penyelenggara: UIN Sultan Maulana Hasanuddin Banten',
+                    desc:'Sertifikat ini diraih atas kelulusan Pelaksanaan Pengenalan Budaya Akademik Kampus disaat awal masuk Universitas.',
+                    role:'Peserta Lulus PBAK',
+                    year:'Kelulusan Resmi',
+                    deliverable:'Sertifikat Resmi Kampus',
+                    tags:['PBAK', 'UIN SMH Banten', 'Akademik Kampus', 'Sertifikat Kelulusan'],
+                    thumb:'../assets/img/SertifikatPBAK.png'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <img src="../assets/img/SertifikatPBAK.png" alt="Sertifikat Kelulusan PBAK UIN SMH Banten"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-cyan-300 bg-cyan-500/20 px-2.5 py-0.5 rounded-full border border-cyan-500/30">🎓
+                                PBAK Kampus</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">UIN
+                                SMH Banten</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors line-clamp-1">
+                            Kelulusan PBAK Kampus
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">UIN Sultan Maulana Hasanuddin
+                            Banten</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Lihat Sertifikat <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-slate-400 font-medium">Sertifikat Kampus</span>
+                </div>
+            </div>
+
+            <!-- Cert 4: Sertifikat 3 Juz Al-Qur'an -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="sertifikat" onclick="openProjectDetail({
+                    category:'sertifikat',
+                    modalCategoryTag:'Prestasi Spiritual',
+                    title:'Sertifikat Tahfizh 3 Juz Al-Qur\'an',
+                    subtitle:'Penyelenggara: Pondok Pesantren Al-Ihsan Kadomas, Pandeglang Banten',
+                    desc:'Sertifikat ini sebuah penghargaan atas prestasi spiritual yang saya jalani ketika dimasa Pondok Pesantren Al-Ihsan Kadomas, Pandeglang Banten.',
+                    role:'Hafizh 3 Juz',
+                    year:'Penghargaan Spiritual',
+                    deliverable:'Sertifikat Hafalan Al-Qur\'an',
+                    tags:['Tahfizh Al-Qur\'an', '3 Juz', 'Ponpes Al-Ihsan', 'Pandeglang'],
+                    thumb:'../assets/img/Sertifikat3Juz.jpg'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <img src="../assets/img/Sertifikat3Juz.jpg" alt="Sertifikat 3 Juz Al-Qur'an"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-violet-300 bg-violet-500/20 px-2.5 py-0.5 rounded-full border border-violet-500/30">📖
+                                Tahfizh 3 Juz</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">Ponpes
+                                Al-Ihsan</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-violet-300 transition-colors line-clamp-1">
+                            Tahfizh 3 Juz Al-Qur'an
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Ponpes Al-Ihsan Kadomas
+                            Pandeglang</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-violet-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Lihat Sertifikat <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-slate-400 font-medium">Spiritual</span>
+                </div>
+            </div>
+
+            <!-- Cert 5: Sertifikat 5 Juz Al-Qur'an -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="sertifikat" onclick="openProjectDetail({
+                    category:'sertifikat',
+                    modalCategoryTag:'Prestasi Spiritual',
+                    title:'Sertifikat Tahfizh 5 Juz Al-Qur\'an',
+                    subtitle:'Penyelenggara: Madrasah Aliyah Negeri 1 Lebak (MAN 1 Lebak)',
+                    desc:'Sertifikat ini sebuah penghargaan saya dari tingkatan prestasi spiritual yang saya jalani ketika naik dibangku Aliyah Negeri di Madrasah Aliyah Negeri 1 Lebak.',
+                    role:'Hafizh 5 Juz',
+                    year:'Penghargaan Spiritual',
+                    deliverable:'Sertifikat Hafalan Al-Qur\'an Lanjutan',
+                    tags:['Tahfizh Al-Qur\'an', '5 Juz', 'MAN 1 Lebak', 'Prestasi Spiritual'],
+                    thumb:'../assets/img/Sertifikat5Juz.jpg'
+                })">
+                <div
+                    class="relative h-64 sm:h-72 overflow-hidden rounded-[20px] m-2.5 bg-slate-950 border border-slate-800">
+                    <img src="../assets/img/Sertifikat5Juz.jpg" alt="Sertifikat 5 Juz Al-Qur'an"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-teal-300 bg-teal-500/20 px-2.5 py-0.5 rounded-full border border-teal-500/30">📖
+                                Tahfizh 5 Juz</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">MAN
+                                1 Lebak</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-teal-300 transition-colors line-clamp-1">
+                            Tahfizh 5 Juz Al-Qur'an
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Madrasah Aliyah Negeri 1 Lebak
+                        </p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <button
+                        class="text-teal-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Lihat Sertifikat <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <span class="text-[11px] text-slate-400 font-medium">Spiritual</span>
+                </div>
+            </div>
+
+            <!-- ===================== WEBSITE KARYA ===================== -->
+            <!-- Website 1: WEBSITE FASHION.ID -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="website" onclick="openProjectDetail({
+                    category:'website',
+                    title:'WEBSITE FASHION.ID',
+                    subtitle:'Platform E-Commerce Busana & Katalog Interaktif · 2026',
+                    desc:'Sistem e-commerce &amp; katalog digital toko busana modern Fashion.id. Dilengkapi fitur pencarian produk real-time, katalog rekomendasi produk terkini &amp; produk terbaru slider, drawer keranjang belanja (cart badge), halaman detail layanan produk, lacak pesanan real-time, hingga tanggapan &amp; ulasan pelanggan terverifikasi.',
+                    role:'Web Developer &amp; UI/UX Designer',
+                    year:'2026',
+                    deliverable:'Website E-Commerce Fashion Responsif &amp; Interaktif (Live Demo)',
+                    tags:['HTML5', 'Tailwind CSS', 'JavaScript', 'E-Commerce', 'Keranjang Belanja', 'Lacak Pesanan', 'Search & Review'],
+                    thumb:'../assets/img/fashionid_live.jpg',
+                    link:'https://fashionidd.netlify.app/'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/fashionid_live.jpg" alt="Preview Website Fashion.id"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-cyan-300 bg-cyan-500/20 px-2.5 py-0.5 rounded-full border border-cyan-500/30">💻
+                                Website</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2026</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            WEBSITE FASHION.ID</h3>
+                        <p class="text-xs text-slate-300 mt-0.5 line-clamp-1 font-medium">E-Commerce &amp; Interactive Store</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- Website 2: WEBSITE OPERASIONAL F&B (FEAST & BITE) -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="website" onclick="openProjectDetail({
+                    category:'website',
+                    title:'WEBSITE OPERASIONAL F&B',
+                    subtitle:'Sistem Menu Digital, QR Scan Meja & Pemesanan Resto · 2026',
+                    desc:'Aplikasi web operasional bistro &amp; restoran (Feast &amp; Bite) berbasis scan QR meja digital. Menghadirkan fitur katalog menu interaktif dengan kustomisasi pesanan, simulasi scan meja resto, detail &amp; re-check pesanan, sistem pembayaran flexible (Cashless &amp; Tunai ke Waiter), status pesanan &amp; struk digital real-time, serta fitur rating &amp; ulasan pelayanan 30 detik untuk Koki &amp; Waiter.',
+                    role:'Web Developer &amp; System Architect',
+                    year:'2026',
+                    deliverable:'Aplikasi Web Menu Digital &amp; Pemesanan Resto (Live Demo)',
+                    tags:['HTML5', 'CSS3', 'JavaScript', 'Digital Menu', 'QR Scan Meja', 'Cashless & Tunai', 'Struk Digital', 'Rating & Ulasan'],
+                    thumb:'../assets/img/feastandbite_live.jpg',
+                    link:'https://feastandbite.netlify.app/'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/feastandbite_live.jpg" alt="Preview Website Feast &amp; Bite"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-cyan-300 bg-cyan-500/20 px-2.5 py-0.5 rounded-full border border-cyan-500/30">💻
+                                Website</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2026</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            WEBSITE OPERASIONAL F&amp;B</h3>
+                        <p class="text-xs text-slate-300 mt-0.5 line-clamp-1 font-medium">Digital Menu, QR Order &amp; Struk</p>
+                    </div>
+                </div>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+            <!-- ===================== MUSIK KARYA ===================== -->
+            <!-- Single Music Project: GUGUR (PARANOISE) -->
+            <div class="project-item card-elevated overflow-hidden group cursor-pointer flex flex-col justify-between"
+                data-category="musik" onclick="openProjectDetail({
+                    category:'musik',
+                    title:'GUGUR',
+                    subtitle:'Composser • PARANOISE · 2026',
+                    desc:'Lagu ini dikomposisi oleh Band PARANOISE termasuk saya sendiri sebagai salah satu komposer utamanya. Secara filosofis, lagu ini menceritakan tentang cinta yang hadir di waktu yang tidak lama, kesadaran akan perpisahan yang tak terhindarkan, penerimaan terhadap akhir (bahkan kematian), serta rasa syukur mendalam karena pernah saling mencintai dan menjalani kisah bersama dengan penuh kesadaran dan keikhlasan.',
+                    role:'Keyboardist, Composser',
+                    year:'2026',
+                    deliverable:'Noiseblast Record',
+                    tags:['FL Studio', 'Composser', 'Keyboardist', 'Audio Production', 'Noiseblast Record'],
+                    thumb:'../assets/img/gugur.webp',
+                    audio:'../assets/music/GUGUR.mp3'
+                })">
+                <div class="relative h-52 sm:h-60 overflow-hidden rounded-[20px] m-2.5">
+                    <img src="../assets/img/gugur.webp" alt="Cover GUGUR - PARANOISE"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy" decoding="async">
+                    <button id="btn-music-gugur"
+                        onclick="event.stopPropagation(); toggleAudio('music-gugur', 'btn-music-gugur', 'eq-mgugur')"
+                        class="btn-interactive absolute inset-0 m-auto size-14 rounded-full bg-cyan-400 text-slate-950 flex items-center justify-center text-xl shadow-xl hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end pointer-events-none">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-purple-300 bg-purple-500/20 px-2.5 py-0.5 rounded-full border border-purple-500/30">🎵
+                                Musik</span>
+                            <span
+                                class="text-[10px] text-slate-400 font-semibold bg-slate-900/90 px-2 py-0.5 rounded-md border border-slate-700/80">2026</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-cyan-300 transition-colors">
+                            GUGUR</h3>
+                        <p class="text-xs text-slate-400 mt-0.5 line-clamp-1 font-medium">Composser • PARANOISE</p>
+                    </div>
+                </div>
+                <audio id="music-gugur" src="../assets/music/GUGUR.mp3"></audio>
+                <div class="px-4 pb-3.5 pt-1 flex items-center justify-between text-xs border-t border-slate-800/80">
+                    <span
+                        class="text-cyan-400 font-bold flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                        data-i18n="cardDetailProject">
+                        Lihat Detail Proyek <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-medium"><i
+                            class="fa-solid fa-hand-pointer text-cyan-400/80"></i> Tap detail</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="text-center py-8 sm:py-10 opacity-60 text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase mt-10 sm:mt-16 px-4 border-t border-slate-800/40"
+        data-i18n="footerText">
+        &copy; 2026 Jackster Portfolio. Hak Cipta YE
+    </footer>
+
+    <!-- HIGH-END PROJECT DETAIL MODAL -->
+    <div id="proj-detail-modal" class="proj-modal-overlay" onclick="closeProjectDetail()">
+        <div class="proj-modal-sheet" onclick="event.stopPropagation()" id="proj-modal-sheet">
+            <div class="proj-modal-handle"></div>
+            <div class="relative">
+                <button class="proj-modal-close" onclick="closeProjectDetail()" aria-label="Tutup modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div id="proj-modal-visual"></div>
+            </div>
+            <div class="proj-modal-body">
+                <div id="proj-modal-badge" class="proj-modal-badge"></div>
+                <h2 id="proj-modal-title" class="proj-modal-title"></h2>
+                <p id="proj-modal-subtitle" class="proj-modal-subtitle"></p>
+                <p id="proj-modal-desc" class="proj-modal-desc"></p>
+                <div id="proj-modal-tags" class="proj-modal-meta"></div>
+                <div id="proj-modal-actions" class="proj-modal-actions"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LIGHTBOX OVERLAY -->
+    <div id="image-modal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content relative max-w-4xl mx-3 sm:mx-4 bg-slate-900 p-3 sm:p-5 rounded-2xl sm:rounded-3xl border border-slate-700 shadow-2xl"
+            onclick="event.stopPropagation()">
+            <button onclick="closeModal()"
+                class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 size-9 sm:size-10 rounded-full bg-cyan-400 text-slate-950 font-bold flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+                <i class="fa-solid fa-xmark text-sm sm:text-base"></i>
+            </button>
+            <img id="modal-img" src="" alt="Modal Preview"
+                class="w-full max-h-[70vh] sm:max-h-[75vh] object-contain rounded-xl sm:rounded-2xl mb-2 sm:mb-3"
+                loading="lazy" decoding="async">
+            <p id="modal-title" class="text-center text-xs sm:text-sm font-bold text-slate-300"></p>
+        </div>
+    </div>
+
+    <!-- EXTERNAL JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
